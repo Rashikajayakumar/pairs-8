@@ -97,6 +97,21 @@ public class ClipTest {
     @Test
     public void testEqualsOnNonEqualClips() 
     {
+          //    create two sub videos with different title and same start time and end time
+ //     check whether two clips are equal
+         System.out.println("Equals On Non equal clip");
+        String SubTitle1 = "Title1"; //Create first sub video clip
+         Clip subClip1 = new Clip(SubTitle1,5,70); // First sub clip
+         
+         Clip subClip2 = new Clip();// Second sub clip
+         String SubTitle2 = "Title 2"; //Create second sub video clip 
+         subClip2.setTitle(SubTitle2);   // Set Title  
+         subClip2.setStart(5);//Set start time  5 sec 
+         subClip2.setEnd(70);// set end time 70 sec
+        
+        boolean ComparisonClip = subClip1.equals(subClip2); 
+       assertNotEquals(true,ComparisonClip); // its a comparison  video
+        System.out.println("Non equal clip found with different title"); 
     }
     
     @Test
