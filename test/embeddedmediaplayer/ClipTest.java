@@ -117,6 +117,22 @@ public class ClipTest {
     @Test
     public void testSetEndToNegativeNumberKeepsPreviousValue() 
     {
+       System.out.println("set Negative num to the end time of the clip");
+       Clip clip = new Clip();
+       String initialTitle = "clipOne";
+       clip.setTitle(initialTitle); //set title 
+       int ClipOneStartTime = 5; // start from 5th sec
+       int ClipEndTime = 70; //end at 70th sec
+       int ExpectEndTime = 70;
+       //create a clip one 
+       clip.setStart(ClipOneStartTime);
+       clip.setEnd(ClipEndTime);
+       // get current status of the clip
+       int NegativeNumber = -1;  
+       clip.setEnd(NegativeNumber); // set negative number as end time
+       int ModifiedEndTime = clip.getEnd();
+       assertEquals(ExpectEndTime,ModifiedEndTime);
+       System.out.println("EndTimeisNotset as EndTime cannot be Negative");
     }
     
     @Test
